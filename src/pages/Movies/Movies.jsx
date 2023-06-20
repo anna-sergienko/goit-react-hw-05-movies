@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import TrendingList from "components/TrendingList/TrendingList";
-import Searchbar from "components/Searchbar/Searchbar";
+import TrendingList from "../../components/TrendingList/TrendingList";
+import Searchbar from "../../components/Searchbar/Searchbar";
 import {searchMovie} from '../../API/Api';
 
 function Movies () {

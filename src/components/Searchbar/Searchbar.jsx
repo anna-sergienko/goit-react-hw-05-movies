@@ -30,9 +30,6 @@ return(
     <button type="submit" >
      Search movie
     </button>
-
-   
-
   </form>
 </>
 )
