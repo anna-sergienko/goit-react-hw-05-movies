@@ -1,36 +1,27 @@
-import { Routes, Route, Link} from "react-router-dom";
+import { Navigate, Routes, Route, Link} from "react-router-dom";
+import { lazy } from "react";
 import Home from '../../pages/Home/Home';
 import Movies from "../../pages/Movies/Movies";
 import MovieDetails from "pages/MovieDetails/MovieDetails";
 import Cast from "../Cast/Cast";
 import Reviews from "../Reviews/Reviews";
+import SharedLayout from "../SharedLayout/SharedLayout";
 
 
 
 
 export const App = () => {
   return (
-    <>
-    <div>
-      <header>
-      <nav>
-          <Link to="/" > Home </Link>
-          <Link to="/movies">Movies</Link>
-        </nav>
-      </header>
-      </div>
-
-      <div>
  <Routes>
-    <Route path="/"  element={<Home />} />
+  <Route path="/"  element={<SharedLayout />}>
+    <Route index  element={<Home />} />
     <Route path="/movies" element={<Movies />} />
     <Route path="/movies/:movieId" element={<MovieDetails/>}>
         <Route path="cast" element={<Cast/>}/>
         <Route path="reviews" element={<Reviews/>}/>
     </Route>
+    </Route>
+    <Route path="*" element={<Navigate to="/" replace={true} />} />
  </Routes>
- </div>
-    </>
-   
   );
 };
