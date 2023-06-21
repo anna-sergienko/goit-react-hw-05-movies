@@ -1,5 +1,5 @@
 import {useEffect, useState } from 'react';
-import { useParams, Link} from 'react-router-dom';
+import { useParams, Link, Outlet} from 'react-router-dom';
 import {getMovieById} from '../../API/Api';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 
@@ -35,6 +35,9 @@ return (
             <Link to="reviews">Reviews</Link>
         </li>
     </ul>
+   
+    <Outlet />
+    
 </div>
 </>
 )}
