@@ -16,22 +16,20 @@ function MovieInfo({description}){
 
     return(
       <>
-      {/* movie card */}
         <div>
             <img src={poster_path ? 
                 `${IMG_URL}${poster_path}` :  defaultImg} alt={original_title} />
         </div>  
        
-{/* movie description  */}
 <div>
     <ul>
          <li>
          <h1>{title}</h1>
-        <span>({release_date})</span>
+        <span>({release_date.slice(0, 4)})</span>
         </li>
 
         <li>
-            <h2>User score: <span>{vote_average}</span></h2>
+            <h2>User score: <span>{vote_average.toFixed(1)}</span></h2>
         </li>
         <li>
             <h2>Overview</h2>
@@ -50,8 +48,6 @@ function MovieInfo({description}){
 </div>
      </>
     )
-
-
 }
 
 export default MovieInfo;
