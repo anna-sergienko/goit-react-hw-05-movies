@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import {Wrapper, Input, Button} from "./Searchbar.styled";
 
 
 function Searchbar ({onSubmit}){
@@ -19,18 +20,20 @@ const handleNameChange = evt =>{
 
 return(
    <>
+   <Wrapper>
   <form onSubmit={handleSubmit}>
-  <input
+  <Input
       type="text"
       autoComplete="off"
       onChange={handleNameChange}
       autoFocus
       placeholder="Enter movie name"
     />
-    <button type="submit" >
+    <Button type="submit" >
      Search movie
-    </button>
+    </Button>
   </form>
+  </Wrapper>
 </>
 )
 }

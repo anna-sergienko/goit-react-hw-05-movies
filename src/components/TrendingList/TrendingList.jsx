@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
+import { ListItem, List} from "./TrendingList.styled";
 
 function TrendingList ({data}) {
 return (
-    <ul>
+    <div>
+    <List>
 {data.map(({id, title}) => (
-    <li key={id}>
+    <ListItem key={id}>
         <Link to={`/movies/${id}`}>
             <h2>{title}</h2>
         </Link>
-        </li>
+        </ListItem>
 ))}
-    </ul>
+    </List>
+    </div>
 )
 }
 
